@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(255, 255, 151);
+    margin: 0;
+    overflow-y:scroll hidden;
+}
+
+
+.scroll-container{
+    margin-top: 20px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    padding: 10px 0;
+}
+
+.scroll-content {
+    display: flex;
+    width: max-content;
+    animation: continuous-scroll 75s linear infinite;
+}
+
+.scroll-content img{
+    height: 300px;
+    width: auto;
+    padding-right: 20px;
+    flex-shrink: 0;
+}
+
+@keyframes continuous-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* This moves the entire row to the left */
+        transform: translateX(-75%); 
+    }
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* This centers the group */
+    align-items: center;     /* This aligns them vertically */
+    gap: 50px;              /* This creates the gap between Yes and No */
+    margin-top: 30px; 
+    height: 100px; 
+}
+
+.no {
+    background-color: red;
+    color: white;
+    position: relative; /* Changed from absolute to relative */
+    transition: none;   /* Ensures it jumps instantly when hovered */
+}
+
+.yes, .no {
+    padding: 20px 30px;
+    border-radius: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.yes {
+    background-color: green;
+    color: white;
+}
+
+dotlottie-wc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;   /* 100% of the viewport width */
+    height: 100vh;  /* 100% of the viewport height */
+    z-index: 9999;  /* Places it above everything else */
+    pointer-events: none; /* Allows you to click "through" the confetti to buttons/links */
+}
